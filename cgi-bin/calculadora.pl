@@ -24,6 +24,89 @@ if($tecla eq "="){
   }
   $operacion = eval($resultado);
 }
+if(length($operacion) > 1){
+  if($tecla eq "-"){
+    if(substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    }
+  }
+  if($tecla eq "+"){
+    if(substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    }
+  }
+  #verificacion potencia
+  if($tecla eq "*"){
+    if(substr($operacion,length($operacion) - 3, 2) eq "**"){
+      chop($operacion);
+    }elsif (substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    }
+  }
+  if($tecla eq "/"){
+    if(substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    }
+  }
+  if($tecla eq "%"){
+    if(substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    }
+  }
+  if($tecla eq "."){
+    if(substr($operacion,length($operacion) - 2, 1) eq "."){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "-"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
+      chop($operacion);
+    } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
+      chop($operacion);
+    }
+  }
+}
 print $cgi->start_html('Calculadora');
 print <<"HTML";
 <!DOCTYPE HTML>

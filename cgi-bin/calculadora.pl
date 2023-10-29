@@ -22,6 +22,14 @@ if($tecla eq "="){
     substr($operacion, length($operacion)-1) eq "%"){
     chop($operacion);
   }
+  my $resultado = "";
+  for(my $i=0; $i < length($operacion); $i++){
+    if(substr($operacion,$i,1) eq "%"){
+      $resultado .= "*0.01*";
+    } else {
+      $resultado .= substr($operacion,$i,1);
+    }
+  }
   $operacion = eval($resultado);
 }
 if(length($operacion) > 1){
@@ -29,10 +37,6 @@ if(length($operacion) > 1){
     if(substr($operacion,length($operacion) - 2, 1) eq "-"){
       chop($operacion);
     } elsif (substr($operacion,length($operacion) - 2, 1) eq "+"){
-      chop($operacion);
-    } elsif (substr($operacion,length($operacion) - 2, 1) eq "*"){
-      chop($operacion);
-    } elsif (substr($operacion,length($operacion) - 2, 1) eq "/"){
       chop($operacion);
     } elsif (substr($operacion,length($operacion) - 2, 1) eq "%"){
       chop($operacion);
@@ -121,7 +125,7 @@ print <<"HTML";
     <meta name="keywords" content="calculadora, multiplicación, respuestas, suma, resta, división"/>
   </head>
   <body class="cuerpo">
-    <h1 id="titulo"><em>CALCULADORA<em></h1>
+    <h1 id="titulo"><em>CALCULADORA</em></h1>
     <div>
       <form method="post" action="calculadora.pl" target="_self">
         <table id="tabla">

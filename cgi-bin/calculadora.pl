@@ -16,9 +16,11 @@ if(substr($operacion,0,1) eq "+" || substr($operacion,0,1) eq "*" ||
   $operacion = "";
 }
 if($tecla eq "="){
+  chop($operacion);
   if(substr($operacion, length($operacion)-1) eq "+" || substr($operacion, length($operacion)-1) eq "-" ||
     substr($operacion, length($operacion)-1) eq "*" || substr($operacion, length($operacion)-1) eq "/" || 
     substr($operacion, length($operacion)-1) eq "%"){
+    chop($operacion);
   }
   $operacion = eval($resultado);
 }
